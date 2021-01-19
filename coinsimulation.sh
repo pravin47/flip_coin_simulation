@@ -2,7 +2,7 @@
 head=1
 hea=0
 tai=0
-for((i=0;i<50;i++))
+for((i=0;i<40;i++))
 do
 random=$((RANDOM%2))
 
@@ -13,5 +13,14 @@ random=$((RANDOM%2))
 		(( tai++ ))
 	fi
 done
-echo "head wins $hea  time"
-echo "tail wins $tai time"
+
+if (( $hea >= 21 ))
+then
+	echo "head wins $hea times"
+elif (( $hea >= 21 ))
+then
+	echo "tail wins $tai times"
+else
+	echo "tie"
+fi
+
